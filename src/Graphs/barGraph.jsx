@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Bar } from 'react-chartjs-2';
 import { makeStyles } from '@material-ui/core/styles'
-import { menuEmpty, menucard } from "../Redux/dashbard/dashbordAction";
+import { menucard } from "../Redux/dashbard/dashbordAction";
 const useStyles = makeStyles(theme => ({
   barGrpah: {
     margin: theme.spacing(2),
@@ -28,10 +28,10 @@ export default function VerticalBar() {
   const dispatch = useDispatch();
   const classes = useStyles();
   const grpahList = useSelector((state) => state.dashboard);
-  useEffect(() => {
-    // getData();
-    dispatch(menucard(1));
-  }, []);
+  // useEffect(() => {
+  //   // getData();
+  //   dispatch(menucard(1));
+  // }, []);
 
   const data = {
     labels: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles';
+import { menucard, menucardDec } from "../../Redux/dashbard/dashbordAction";
 import {
     Grid,
     Card,
@@ -30,8 +31,11 @@ export default function AltCard() {
         { quarter: 4, earnings: grpahList.card4 }
     ]
 
-    async function increment(i){
-        await dispatch()
+    async function increment(i) {
+        await dispatch(menucard(i + 1))
+    }
+    async function decrement(i) {
+        await dispatch(menucardDec(i + 1))
     }
 
     return (
@@ -52,9 +56,9 @@ export default function AltCard() {
                             />
                             <CardContent>
                                 <ButtonGroup size="small" aria-label="small outlined button group">
-                                    <Button >+</Button>
-                                    {<Button disabled>{i == 0 ? grpahList.card1 : i == 1 ? grpahList.card2 : i == 2 ? grpahList.card3 : i == 3 ? grpahList.card4 : null}</Button>}
-                                    {<Button >-</Button>}
+                                    <Button variant="outlined" color="secondary" onClick={() => increment(i)}>+</Button>
+                                    {<Button variant="outlined" color="secondary" disabled>{i == 0 ? grpahList.card1 : i == 1 ? grpahList.card2 : i == 2 ? grpahList.card3 : i == 3 ? grpahList.card4 : null}</Button>}
+                                    {<Button variant="outlined" color="primary" onClick={() => decrement(i)}>-</Button>}
                                 </ButtonGroup>
                             </CardContent>
                         </Card>
