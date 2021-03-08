@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   menuButton1: {
     marginRight: theme.spacing(2),
     // backgroundColor: purple[700],
-    color:blue[300]
+    color: blue[300]
   },
   title: {
     flexGrow: 1,
@@ -38,8 +38,8 @@ const useStyles = makeStyles((theme) => ({
   user: {
     margin: theme.spacing(2),
   },
-  appBar:{
-      color:purple
+  appBar: {
+    color: purple
   },
   list: {
     width: 250,
@@ -108,11 +108,11 @@ export default function MenuAppBar() {
             <MenuIcon />
           </IconButton>
           <React.Fragment key='left'>
-          {/* <Button onClick={toggleDrawer('left', true)}>{'left'}</Button> */}
-          <Drawer anchor='left' open={state['left']} onClose={toggleDrawer('left', false)}>
-            {list('left')}
-          </Drawer>
-        </React.Fragment>
+            {/* <Button onClick={toggleDrawer('left', true)}>{'left'}</Button> */}
+            <Drawer anchor='left' open={state['left']} onClose={toggleDrawer('left', false)}>
+              {list('left')}
+            </Drawer>
+          </React.Fragment>
           <Typography variant="h6" className={classes.title}>
             Dashboard
           </Typography>
@@ -120,40 +120,40 @@ export default function MenuAppBar() {
             Server Code
           </Button> */}
           <Box>
-              <NotificationsActiveTwoToneIcon/>
+            <NotificationsActiveTwoToneIcon />
           </Box>
-          <Typography  className={classes.user} >
-              Arpit Sharma
+          <Typography className={classes.user} >
+            Arpit Sharma
           </Typography>
           <div>
-              <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
-                <MenuItem onClick={handleClose}>Change Password</MenuItem>
-              </Menu>
-            </div>
+            <IconButton
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>Logout</MenuItem>
+              <MenuItem onClick={handleClose}>Change Password</MenuItem>
+            </Menu>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
